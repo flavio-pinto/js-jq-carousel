@@ -3,10 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <title>Carousel</title>
 </head>
 <body>
+    <div id="carousel">
+        <button class="button-left">
+            <span><i class="fas fa-chevron-left"></i></span>
+        </button>
+
+        <div class="img-container first-img">
+            <img src="img/death-stranding.jpg" alt="death stranding">
+        </div>
+
+        <div class="img-container">
+            <img src="img/mass-effect.jpg" alt="mass effect">
+        </div>
+
+        <div class="img-container">
+            <img src="img/horizon.jpg" alt="horizon zero dawn">
+        </div>
+
+        <div class="img-container last-img">
+            <img src="img/the-witcher.png" alt="the witcher">
+        </div>
+
+        <button class="button-right">
+            <span><i class="fas fa-chevron-right"></i></span>
+        </button>
+        
+        <div class="controller">
+            <ul class="controller-dots-list">
+                <li class="controller-dots"></li>
+                <li class="controller-dots"></li>
+                <li class="controller-dots"></li>
+                <li class="controller-dots"></li>
+            </ul>
+        </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/main.js" charset="utf-8"></script>
 </body>
