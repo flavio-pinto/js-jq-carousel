@@ -2,12 +2,12 @@ $(document).ready(function () {
     // Variabili
     var buttonLeft = $('.button-left');
     var buttonRight = $('.button-right');
-    var imgContainer = $('.img-container');
-    
 
     buttonRight.click(nextImg);
     buttonLeft.click(previousImg);
+    
 
+    // Permetto input left-right da tastiera
     $(document).keydown(function(event) {
         if (event.keyCode == 39) {
             nextImg()
@@ -16,7 +16,6 @@ $(document).ready(function () {
         }
     });
 
-    
     /* Funzioni */
 
     // Funzione per pulsante immagine successiva
@@ -27,6 +26,13 @@ $(document).ready(function () {
             $('.img-container.first-img').addClass('show');
         } else {
             activeImg.next().addClass('show');
+        }
+
+        if ($('.controller-dot.selected-dot').hasClass('selected-dot') && $('.controller-dot.selected-dot').hasClass('last-dot') == false) {
+            $('.controller-dot.selected-dot').removeClass('selected-dot').addClass('not-selected-dot').next().addClass('selected-dot').removeClass('not-selected-dot');
+        } else if ($('.controller-dot.selected-dot').hasClass('last-dot')) {
+            $('.controller-dot.selected-dot').removeClass('selected-dot').addClass('not-selected-dot');
+            $('.controller-dot.first-dot').addClass('selected-dot').removeClass('not-selected-dot');
         }
     }
 
@@ -39,9 +45,12 @@ $(document).ready(function () {
         } else {
             activeImg.prev().addClass('show');
         }
+
+        if ($('.controller-dot.selected-dot').hasClass('selected-dot') && $('.controller-dot.selected-dot').hasClass('first-dot') == false) {
+            $('.controller-dot.selected-dot').removeClass('selected-dot').addClass('not-selected-dot').prev().addClass('selected-dot').removeClass('not-selected-dot');
+        } else if ($('.controller-dot.selected-dot').hasClass('first-dot')) {
+            $('.controller-dot.selected-dot').removeClass('selected-dot').addClass('not-selected-dot');
+            $('.controller-dot.last-dot').addClass('selected-dot').removeClass('not-selected-dot');
+        }
     }
 }); // fine document ready
-
-
-
-

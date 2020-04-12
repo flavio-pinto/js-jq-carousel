@@ -5,9 +5,13 @@
 }
 
 /* Utilities */
+.selected-dot {
+    background-color: red;
+}
 
-
-
+.not-selected-dot {
+    background-color: white;
+}
 /* Styles */
 
 body {
@@ -61,13 +65,12 @@ body {
     padding: 0;
 }
 
-.controller .controller-dots-list .controller-dots {
+.controller .controller-dots-list .controller-dot {
     display: inline-block;
     list-style: none;
     height: 10px;
     width: 10px;
     margin: 0 10px;
-    background: white;
     border-radius: 50%;
     cursor: pointer;
 }
